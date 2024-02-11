@@ -1,0 +1,20 @@
+[project]
+name = "delay_pay"
+authors = [
+    { name = "Precihole Sports Pvt Ltd", email = "azhar@preciholesports.com"}
+]
+description = "Delay Pay simplifies salary deductions for late arrivals with customizable, automated rules, enhancing payroll efficiency."
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    # "frappe~=15.0.0" # Installed and managed by bench.
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+# These dependencies are only installed when developer mode is enabled
+[tool.bench.dev-dependencies]
+# package_name = "~=1.1.0"
