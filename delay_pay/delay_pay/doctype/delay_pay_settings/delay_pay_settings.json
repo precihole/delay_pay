@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-11 13:16:31.020310",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "minimum_late_days",
+  "maximum_late_days_optional",
+  "deduction_type",
+  "salary_deduction_days"
+ ],
+ "fields": [
+  {
+   "description": "The minimum number of late days for this rule to apply.",
+   "fieldname": "minimum_late_days",
+   "fieldtype": "Int",
+   "label": "Minimum Late Days",
+   "non_negative": 1
+  },
+  {
+   "description": "The maximum number of late days for this rule. Leave blank if not applicable.",
+   "fieldname": "maximum_late_days_optional",
+   "fieldtype": "Int",
+   "label": "Maximum Late Days (optional)",
+   "non_negative": 1
+  },
+  {
+   "description": "The type of deduction to apply (day's salary (number of days) or no deduction).",
+   "fieldname": "deduction_type",
+   "fieldtype": "Select",
+   "label": "Deduction Type",
+   "options": "\nDays Salary\nNo Deduction"
+  },
+  {
+   "depends_on": "eval:doc.deduction_type == 'Days Salary'",
+   "fieldname": "salary_deduction_days",
+   "fieldtype": "Float",
+   "label": "Salary Deduction Days",
+   "non_negative": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-02-11 16:06:58.990726",
+ "modified_by": "Administrator",
+ "module": "Delay Pay",
+ "name": "Delay Pay Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
